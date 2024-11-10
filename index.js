@@ -21,7 +21,7 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 async function checkAllItems() {
-  const result = await db.query("SELECT * FROM items");
+  const result = await db.query("SELECT * FROM items ORDER BY id");
   return result.rows;
 }
 let items = [
