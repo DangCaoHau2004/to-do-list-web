@@ -6,19 +6,19 @@ import dotenv from "dotenv";
 const app = express();
 dotenv.config();
 
-const port = 3000;
+const port = process.env.PORT;
 const HOST = process.env.HOST;
 const USER = process.env.USER;
 const PASSWORD = process.env.PASSWORD;
 const DATABASE = process.env.DATABASE;
-const PORT = process.env.PORT;
+const PORT_PG = process.env.PORT_PG;
 // thiết lập database
 const db = new pg.Client({
   user: USER,
   host: HOST,
   database: DATABASE,
   password: PASSWORD,
-  port: PORT,
+  port: PORT_PG,
 });
 
 // kết nối database
